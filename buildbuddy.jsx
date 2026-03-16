@@ -289,15 +289,46 @@ export default function BuildBuddyLanding() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: flex !important; }
-          .hero-buttons { flex-direction: column; }
-          .hero-buttons button { width: 100%; }
-          .services-grid { grid-template-columns: 1fr !important; }
-          .projects-grid { grid-template-columns: 1fr !important; }
-          .features-grid { grid-template-columns: 1fr !important; }
-          .steps-row { flex-direction: column !important; }
-          .testimonials-grid { grid-template-columns: 1fr !important; }
-          .footer-links { flex-direction: column; gap: 24px !important; }
+
+          /* Hero */
+          .hero-buttons { flex-direction: column !important; gap: 12px !important; }
+          .hero-buttons button { width: 100% !important; }
+
+          /* Grids → single column */
+          .services-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+          .projects-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .features-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+          .testimonials-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+          /* Steps */
+          .steps-row { flex-direction: column !important; align-items: center !important; gap: 32px !important; }
+          .steps-row > * { width: 100% !important; }
+
+          /* Footer */
+          .footer-links { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+
+          /* Reduce section padding */
+          .section-mobile-pad { padding: 60px 16px !important; }
+
+          /* Section desc full width */
+          .section-desc { max-width: 100% !important; font-size: 15px !important; }
+
+          /* Service / feature cards */
+          .service-card { padding: 22px 18px !important; }
+          .feature-card { padding: 24px 20px !important; }
+          .testimonial-card { padding: 24px 20px !important; }
+
+          /* Buttons full tap area */
+          .btn-primary, .btn-secondary { padding: 14px 24px !important; font-size: 15px !important; }
         }
+
+        @media (max-width: 480px) {
+          .section-title { font-size: 24px !important; }
+          .section-label { font-size: 11px !important; }
+          .hero-stat-row { gap: 24px !important; }
+          .project-card-body { padding: 18px !important; }
+        }
+
         @media (min-width: 769px) {
           .mobile-toggle { display: none !important; }
         }
@@ -361,7 +392,7 @@ export default function BuildBuddyLanding() {
         <div className="grid-overlay" />
         <div className="float-orb" style={{ width: 500, height: 500, background: "rgba(59,130,246,0.2)", top: "-10%", right: "-5%" }} />
         <div className="float-orb" style={{ width: 300, height: 300, background: "rgba(99,102,241,0.15)", bottom: "10%", left: "5%", animationDelay: "3s" }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", position: "relative", zIndex: 2 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(100px, 18vw, 140px) clamp(16px, 4vw, 24px) clamp(60px, 10vw, 100px)", position: "relative", zIndex: 2, width: "100%" }}>
           <div style={{ maxWidth: 680 }}>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -373,7 +404,7 @@ export default function BuildBuddyLanding() {
             </div>
             <h1 style={{
               fontFamily: "'Syne', sans-serif",
-              fontSize: "clamp(44px, 7vw, 76px)",
+              fontSize: "clamp(36px, 9vw, 76px)",
               fontWeight: 800, color: "white", lineHeight: 1.05, marginBottom: 24,
               letterSpacing: "-0.02em",
             }}>
@@ -381,13 +412,13 @@ export default function BuildBuddyLanding() {
             </h1>
             <h2 style={{
               fontFamily: "'Syne', sans-serif",
-              fontSize: "clamp(20px, 3vw, 28px)",
+              fontSize: "clamp(17px, 4vw, 28px)",
               fontWeight: 600, color: "rgba(255,255,255,0.85)", lineHeight: 1.3, marginBottom: 20,
             }}>
               Your Go-To Solution for<br />Engineering Projects
             </h2>
             <p style={{
-              fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.8, marginBottom: 40, maxWidth: 500,
+              fontSize: "clamp(14px, 3.5vw, 17px)", color: "rgba(255,255,255,0.6)", lineHeight: 1.8, marginBottom: 40, maxWidth: 500,
             }}>
               Get custom software projects, AI/ML projects, web apps, and mobile applications ready for submission — with full documentation and viva support.
             </p>
@@ -395,11 +426,11 @@ export default function BuildBuddyLanding() {
               <button className="btn-primary" style={{ padding: "16px 36px", fontSize: 16 }} onClick={() => scrollTo("projects")}>Explore Projects</button>
               <button className="btn-secondary" onClick={() => scrollTo("contact")}>Contact Us</button>
             </div>
-            <div style={{ display: "flex", gap: 40, marginTop: 56, flexWrap: "wrap" }}>
+            <div className="hero-stat-row" style={{ display: "flex", gap: 32, marginTop: 48, flexWrap: "wrap" }}>
               {[["500+", "Projects Delivered"], ["100+", "Happy Students"], ["50+", "Tech Stacks"]].map(([num, label]) => (
                 <div key={num}>
-                  <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 28, fontWeight: 800, color: "white" }}>{num}</div>
-                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", marginTop: 4, fontWeight: 500 }}>{label}</div>
+                  <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 800, color: "white" }}>{num}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 4, fontWeight: 500 }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -408,7 +439,7 @@ export default function BuildBuddyLanding() {
       </section>
 
       {/* Services Section */}
-      <section id="services" style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
+      <section id="services" className="section-mobile-pad" style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
         <AnimatedSection>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <div className="section-label">Our Services</div>
@@ -430,7 +461,7 @@ export default function BuildBuddyLanding() {
       </section>
 
       {/* Featured Projects */}
-      <section id="projects" style={{ padding: "100px 24px", background: "#f8fafc" }}>
+      <section id="projects" className="section-mobile-pad" style={{ padding: "100px 24px", background: "#f8fafc" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimatedSection>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
@@ -463,7 +494,7 @@ export default function BuildBuddyLanding() {
                       {p.name[0]}
                     </div>
                   </div>
-                  <div style={{ padding: "24px" }}>
+                  <div className="project-card-body" style={{ padding: "24px" }}>
                     <div style={{
                       display: "inline-block", padding: "4px 12px", borderRadius: 6,
                       background: `${p.color}0a`, border: `1px solid ${p.color}18`,
@@ -481,7 +512,7 @@ export default function BuildBuddyLanding() {
       </section>
 
       {/* Why Choose BuildBuddy */}
-      <section id="why" style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
+      <section id="why" className="section-mobile-pad" style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
         <AnimatedSection>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <div className="section-label">Why BuildBuddy</div>
@@ -508,7 +539,7 @@ export default function BuildBuddyLanding() {
       </section>
 
       {/* How It Works */}
-      <section id="how" style={{ padding: "100px 24px", background: "#f8fafc" }}>
+      <section id="how" className="section-mobile-pad" style={{ padding: "100px 24px", background: "#f8fafc" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimatedSection>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
@@ -544,7 +575,7 @@ export default function BuildBuddyLanding() {
       </section>
 
       {/* Testimonials */}
-      <section style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="section-mobile-pad" style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
         <AnimatedSection>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <div className="section-label">Student Testimonials</div>
@@ -579,8 +610,8 @@ export default function BuildBuddyLanding() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="contact-section" style={{ padding: "100px 24px" }}>
-        <div style={{ position: "absolute", inset: 0 }}>
+      <section id="contact" className="contact-section section-mobile-pad" style={{ padding: "100px 24px", position: "relative" }}>
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
           <div className="grid-overlay" />
           <div className="float-orb" style={{ width: 400, height: 400, background: "rgba(59,130,246,0.12)", bottom: "-10%", right: "10%" }} />
         </div>

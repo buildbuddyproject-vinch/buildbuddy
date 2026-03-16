@@ -427,7 +427,7 @@ export default function BuildBuddyLanding() {
               <button className="btn-secondary" onClick={() => scrollTo("contact")}>Contact Us</button>
             </div>
             <div className="hero-stat-row" style={{ display: "flex", gap: 32, marginTop: 48, flexWrap: "wrap" }}>
-              {[["500+", "Projects Delivered"], ["100+", "Happy Students"], ["50+", "Tech Stacks"]].map(([num, label]) => (
+              {[["30+", "Projects Delivered"], ["100+", "Happy Students"], ["50+", "Tech Stacks"]].map(([num, label]) => (
                 <div key={num}>
                   <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 800, color: "white" }}>{num}</div>
                   <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 4, fontWeight: 500 }}>{label}</div>

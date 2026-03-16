@@ -364,7 +364,7 @@ export default function BuildBuddyLanding() {
               background: "none", border: "none", cursor: "pointer", padding: 8,
               display: "flex", flexDirection: "column", gap: 5,
             }}>
-            {[0,1,2].map(i => (
+            {[0, 1, 2].map(i => (
               <div key={i} style={{ width: 22, height: 2, borderRadius: 2, background: scrollY > 40 ? "#334155" : "white" }} />
             ))}
           </button>
@@ -379,7 +379,7 @@ export default function BuildBuddyLanding() {
               <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 18 }}>BuildBuddy</span>
               <button onClick={() => setMenuOpen(false)} style={{ background: "none", border: "none", fontSize: 24, cursor: "pointer", color: "#64748b" }}>×</button>
             </div>
-            {[["home","Home"],["services","Services"],["projects","Projects"],["why","Why Us"],["how","How It Works"],["contact","Contact"]].map(([id,label]) => (
+            {[["home", "Home"], ["services", "Services"], ["projects", "Projects"], ["why", "Why Us"], ["how", "How It Works"], ["contact", "Contact"]].map(([id, label]) => (
               <button key={id} className="mobile-nav-link" onClick={() => scrollTo(id)}>{label}</button>
             ))}
             <button className="btn-primary" style={{ marginTop: 12, width: "100%", textAlign: "center" }} onClick={() => scrollTo("contact")}>Get Started</button>
@@ -415,7 +415,7 @@ export default function BuildBuddyLanding() {
               fontSize: "clamp(17px, 4vw, 28px)",
               fontWeight: 600, color: "rgba(255,255,255,0.85)", lineHeight: 1.3, marginBottom: 20,
             }}>
-              Your Go-To Solution for<br />Engineering Projects
+              Your Go-To Solution for<br /> Projects
             </h2>
             <p style={{
               fontSize: "clamp(14px, 3.5vw, 17px)", color: "rgba(255,255,255,0.6)", lineHeight: 1.8, marginBottom: 40, maxWidth: 500,
@@ -588,13 +588,13 @@ export default function BuildBuddyLanding() {
             <AnimatedSection key={i} delay={i * 0.1}>
               <div className="testimonial-card">
                 <div style={{ display: "flex", gap: 2, marginBottom: 16 }}>
-                  {[1,2,3,4,5].map(s => <span key={s} style={{ fontSize: 18 }}>⭐</span>)}
+                  {[1, 2, 3, 4, 5].map(s => <span key={s} style={{ fontSize: 18 }}>⭐</span>)}
                 </div>
                 <p style={{ fontSize: 15, color: "#334155", lineHeight: 1.7, marginBottom: 20, fontStyle: "italic" }}>"{t.text}"</p>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <div style={{
                     width: 40, height: 40, borderRadius: "50%",
-                    background: `linear-gradient(135deg, ${["#3b82f6","#6366f1","#0ea5e9"][i]}, ${["#2563eb","#4f46e5","#0284c7"][i]})`,
+                    background: `linear-gradient(135deg, ${["#3b82f6", "#6366f1", "#0ea5e9"][i]}, ${["#2563eb", "#4f46e5", "#0284c7"][i]})`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     color: "white", fontWeight: 700, fontSize: 15, fontFamily: "'Syne', sans-serif",
                   }}>{t.name[0]}</div>
@@ -663,14 +663,14 @@ export default function BuildBuddyLanding() {
               <p style={{ fontSize: 13, color: "#64748b" }}>Projects Made Simple</p>
             </div>
             <div style={{ display: "flex", gap: 32, flexWrap: "wrap" }}>
-              {[["services","Services"],["projects","Projects"],["contact","Contact"]].map(([id,label]) => (
+              {[["services", "Services"], ["projects", "Projects"], ["contact", "Contact"]].map(([id, label]) => (
                 <button key={id} onClick={() => scrollTo(id)} style={{
                   background: "none", border: "none", color: "#94a3b8",
                   fontSize: 14, cursor: "pointer", fontFamily: "'DM Sans', sans-serif",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={e => e.target.style.color = "white"}
-                onMouseLeave={e => e.target.style.color = "#94a3b8"}
+                  onMouseEnter={e => e.target.style.color = "white"}
+                  onMouseLeave={e => e.target.style.color = "#94a3b8"}
                 >{label}</button>
               ))}
             </div>
